@@ -9,7 +9,7 @@ class ExchangeException(Exception):
 
 class Exchange:
     @staticmethod
-    def get_price(quote: str, base: str, amount: str):
+    def get_price(quote: str, base: str, amount: int):
 
         if quote == base:
             raise ExchangeException(f"Can't exchange same currency {base}.")
