@@ -31,8 +31,8 @@ def get_price(message: telebot.types.Message):
 
         quote, base, amount = values
         total_base = Exchange.get_price(base, quote, amount)
-
-        text = f"Exchange {amount} {quote} in {base} - {total_base}"
+        total_basex = (float(total_base) * int(amount))
+        text = f"Exchange {amount} {quote} in {base} - {total_basex}"
         bot.send_message(message.chat.id, text)
 
     except ExchangeException as e:
